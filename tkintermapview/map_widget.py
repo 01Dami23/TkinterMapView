@@ -25,6 +25,7 @@ class TkinterMapView(tkinter.Frame):
                  database_path=None,
                  use_database_only=False,
                  max_zoom=19,
+                 min_zoom=10
                  **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -87,7 +88,7 @@ class TkinterMapView(tkinter.Frame):
         self.use_database_only = use_database_only
         self.overlay_tile_server = None
         self.max_zoom = max_zoom
-        self.min_zoom = math.ceil(math.log2(math.ceil(self.width / self.tile_size)))
+        self.min_zoom = min_zoom# math.ceil(math.log2(math.ceil(self.width / self.tile_size)))
 
         # pre caching for smoother movements (load tile images into cache at a certain radius around the pre_cache_position)
         self.pre_cache_position = None
