@@ -25,7 +25,7 @@ class TkinterMapView(tkinter.Frame):
                  database_path=None,
                  use_database_only=False,
                  max_zoom=19,
-                 min_zoom=10
+                 min_zoom=10,
                  **kwargs):
         super().__init__(*args, **kwargs)
 
